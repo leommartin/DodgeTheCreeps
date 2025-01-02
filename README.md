@@ -1,2 +1,2 @@
 # DodgeTheCreeps
-Construção do jogo Dodge de Creeps utilizando GDScript e a ferramenta Godot Engine
+Construção do jogo Dodge the Creeps utilizando GDScript e a ferramenta Godot Engine
