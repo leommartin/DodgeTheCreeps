@@ -59,6 +59,6 @@ func start(pos):
 	show()
 	$CollisionShape2D.disabled = false
 	
-	# Stop in scale (0.75, 0.75)
+	# Stop before change position of StartPosition to (240,250)
 	
 	
