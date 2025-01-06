@@ -12,9 +12,12 @@ func _process(delta: float) -> void:
 	pass
 	
 func show_message(text):
-	$Message.text = text
-	$Message.show()
-	$MessageTimer.start()
+	if $Message != null:  
+		$Message.text = text  
+		$Message.show()  
+		$MessageTimer.start()  
+	else:  
+		print("Erro: $Message não está inicializado.") 
 	
 func show_game_over():
 	show_message("Game Over")
