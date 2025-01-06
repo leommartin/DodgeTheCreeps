@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://doijpo403a5cx"]
+[gd_scene load_steps=9 format=3 uid="uid://doijpo403a5cx"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_mij8w"]
 [ext_resource type="Texture2D" uid="uid://dmy2qs1s1qgpk" path="res://art/playerGrey_up1.png" id="1_qv44b"]
@@ -35,6 +35,13 @@ animations = [{
 radius = 27.0
 height = 68.0
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_btx0n"]
+lifetime_randomness = 0.01
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 3.0
+
 [node name="Player" type="Area2D"]
 script = ExtResource("1_mij8w")
 metadata/_edit_group_ = true
@@ -46,5 +53,11 @@ animation = &"up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_jq88m")
+
+[node name="Trail" type="GPUParticles2D" parent="."]
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_btx0n")
+visibility_rect = Rect2(-20, -20, 40, 40)
+draw_order = 0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
